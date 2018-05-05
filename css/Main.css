@@ -1,0 +1,778 @@
+/**/
+/* OGOLNE ZALOZENIA */
+/**/
+.mainWindow{
+	/* position:absolute; */
+	float:left;
+	width:90%;
+	/* right: 5%; */
+}
+html,body{
+	padding:0px;
+	margin:0px;
+	height:100%;
+	background-color: #808080;
+}
+.section{
+text-align:center; 
+}
+.section p{
+	text-align:left;
+}
+/**/
+/* ZMIANY W STRONACH */
+/**/
+#str1 h1{
+text-align:center;
+margin:0;
+padding:0;
+}
+#str1{
+background-color: #808080;
+height:100%;
+}
+#str2{
+    background-color: #808080;
+}
+#str3{
+    background-color: #808080;
+}
+#str4{
+    background-color: #808080;
+}
+#str5{
+    background-color: #808080;
+}
+#str6{
+    background-color: #808080;
+}
+#str7{
+    background-color: #808080;
+}
+#str8{
+    background-color: #808080;
+}
+#str9{
+    background-color: #808080;
+}
+#str10{
+    background-color: #808080;
+}
+#str11{
+    background-color: #808080;
+}
+#str12{
+    background-color: #808080;
+}
+#str13{
+    background-color: #808080;
+}
+#str1 .fp-controlArrow{
+    display: none; 
+}
+#str2 .fp-controlArrow{
+    display: none; 
+}
+#str3 .fp-controlArrow{
+    display: none; 
+}
+#str4 .fp-controlArrow{
+    display: none; 
+}
+#str5 .fp-controlArrow{
+    display: none; 
+}
+#str6 .fp-controlArrow{
+    display: none; 
+}
+#str7 .fp-controlArrow{
+    display: none; 
+}
+#str8 .fp-controlArrow{
+    display: none; 
+}
+#str9 .fp-controlArrow{
+    display: none; 
+}
+#str8 table,td,tr{
+	border: 1px solid; 
+}
+#str8 table{
+	width:100%;
+}
+#str7 table,td,tr{
+	border: 1px solid; 
+}
+#str7 table{
+	width:50%;
+}
+.strL{
+    float: left;
+}
+.strP{
+    float:right;
+}
+.btnfix{
+    overflow: auto;
+}
+.strL1
+{
+    width: 80px;
+    height: 25px;  
+    cursor: pointer;
+    background-image: url("../img/arrowL.png");
+    background-size: 80px 25px;
+    background-repeat: no-repeat;
+}
+.strP1
+{
+    width: 80px;
+    height: 25px;  
+    cursor: pointer;
+    background-image: url("../img/arrowP.png");
+    background-size: 80px 25px;
+    background-repeat: no-repeat;
+}
+/**/
+/* DODANIE KOLOROWYCH PANELI DO BOOTSTRAPA */
+/**/
+.panel-green {
+    border-color: #5cb85c;
+}
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+.panel-green a {
+    color: #5cb85c;
+}
+.panel-green a:hover {
+    color: #3d8b3d;
+}
+.panel-red {
+    border-color: #d9534f;
+}
+.panel-red .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+.panel-red a {
+    color: #d9534f;
+}
+.panel-red a:hover {
+    color: #b52b27;
+}
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+.panel-yellow .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+.panel-yellow a {
+    color: #f0ad4e;
+}
+.panel-yellow a:hover {
+    color: #df8a13;
+}
+/**/
+/* FORMATOWANIE GENERATORA */
+/**/
+.Gen_div_b
+{
+    background-color:#fff;
+    width:800px;
+    height:410px;
+}
+#canvasIN{
+    position: relative;
+    border: 2px solid #73AD21;
+    border-width: 1px;
+    z-index: 10;
+    margin:0;
+    text-align:left !important;
+}
+#canvascomb{
+    margin-left: 415px;
+    height: 410px;
+    width: 410px;
+    margin: 0;
+    padding: 0;
+}
+#Gen_mod{
+    float: left;
+    height: 410px;
+    width: 410px;
+    margin: 0;
+    padding: 0;
+}
+#canvasOUT{
+    position: absolute;
+    border: 2px solid #73AD21;
+    border-width: 1px;
+    border-style: solid;
+    z-index:1;
+}
+#canvasDIS{
+    position: absolute;
+    z-index:1;
+    border-width: 1px;
+}
+
+#magiczneliczby{
+    visibility: hidden;
+}
+
+#obraz{
+    z-index: 3000;
+    /* text-align: left; */
+    /* margin-left: 25px; */
+}
+.tabelka{
+	margin:0 auto;
+}
+#modalGener{
+    position: absolute;
+    background-color: #000;
+    height: 90%;
+    width: 80%;
+    text-align: center;
+    margin: 2%;
+}
+#canvasJulia{
+    text-align: left;
+    border: 2px solid #73AD21;
+    border-width: 1px;
+}  
+#canvasMandelToJul{
+    position: absolute;
+    left:0;
+}
+#overlay-ust {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    text-align:center;
+    background-color: rgba(0, 0, 10, 0.85);
+    z-index: 1070;
+}
+#overlay-odw{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 10, 0.85);
+    z-index: 1070;
+}
+#MandelToJul{
+    position: relative;
+    border: 2px solid #73AD21;
+    border-width: 1px;
+}
+#canvasMan{
+    position: relative;
+    margin-left: 0px;
+    border: 2px solid #73AD21;
+    border-width: 1px;
+}
+#grawchaos{
+    /* border: 2px solid #73AD21; */
+    /* border-width: 1px; */
+}
+/**/
+/* FORMATOWNIE NAVIGACJI */
+/**/
+#navi{
+position:relative;
+height:100%;
+width:10%;
+float:right;
+background-color:#4169e1;
+font-family: 'Bree Serif', sans-serif;
+z-index:10;
+}
+#tekstura{
+margin:0;
+padding:0;
+position:absolute;
+width:100%;
+height:100%;
+z-index:20;
+background-image:url("../img/teksturatrojkata.png");
+background-size: 90% 40%;
+}
+.zak{
+margin:0;
+padding:0;
+z-index:10;
+height: calc(101%/9);
+width: 101%;
+border: 1px solid;
+border-bottom:0.7px;
+border-right:0px;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+vertical-align:middle;
+display: table;}
+.zak:hover{
+background-color:rgba(211,219,242,0.5);
+}
+.zak:hover .navT{
+color:black;
+}
+.zak.active:hover{
+background-color:rgba(211,219,242,0.5);
+}
+.zak.active:hover .navT{
+color:black;
+}
+.navT{
+	z-index:1;
+	color:white;
+	text-align:center;
+	display: table-cell;
+	vertical-align: middle;
+}
+.zak.active{
+	background: rgba(0,128,0,0.5);
+	color: #4169e1;
+	border: 1px solid;
+	border-color:black;
+	border-right:0px;
+	border-bottom:0;
+}
+/**/
+.navi_{
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+#spis {
+    list-style: none;
+    margin:0;
+    padding:0;
+	font-size:25px;
+	height:100%;
+	text-align:center;
+}
+#navi .navi_ {
+	height: -moz-calc(100% / 9);
+	height: -webkit-calc(100% / 9);
+	height: calc(100% / 9);
+}
+
+#navi .ico1.active{
+	background: #08090B;
+	color: #fff;
+}
+#navi a{
+	text-decoration:none;
+	color: #000;
+}
+#navi .lic a{
+	text-decoration:none;
+	color: #000;
+}
+
+#navi .lic.active a:hover{
+	color: #000;
+}
+.l_T9{
+    background-color: #8AA4B7;
+}
+.lic p{
+margin:0;
+padding:0;
+}
+
+#zdj001 img{
+	position:absolute;
+    margin: auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+#zdj002 img{
+	position:absolute;
+    margin: auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+#zdj003 img{
+	position:absolute;
+    margin: auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+#img015{
+        right:0;
+    } 
+/**/
+/* FORMATOWANIE CALEJ STRONY BY DOSTOSOWYWALA SIE DO POSZCZEGOLNYCH ROZDZIELCZOSCI */
+/**/
+#img013{
+    width: 80%;
+}
+@media screen and (max-width: 768px)
+{
+    body {
+        font-size: 0.8em;
+    }
+.navT{
+		font-size: 0.3em;
+	}
+}
+@media screen and (min-width: 768px) 
+{
+    body {
+        font-size: 0.9em;       
+    }
+.navT{
+		font-size: 0.4em;
+	}
+}
+@media  screen and (min-width: 850px) 
+{
+    .container{
+        width: 900px;
+    }
+    body {
+        font-size: 1.0em;       
+    }
+	.navT{
+		font-size: 0.5em;
+	}
+    #img003{
+        height: 110%;
+        width: 110%;
+    }
+    #img004{
+        height: 110%;
+        width: 110%;
+    }
+    #img005{
+        height: 80%;
+        width: 66%;
+    }
+    #img006{
+        height: 80%;
+        width: 80%;
+        margin-left: 10%;
+    }
+    #img007, #img008{
+        height: 65%;
+        width: 65%;
+    }
+    #img009 , #img010{
+        height: 80%;
+        width: 80%;
+    }
+    #img011{
+        height: 50%;
+        width: 50%;
+    }
+    #img012{
+        height: 50%;
+        width: 60%;
+    }
+	#img014{
+        height: 50%;
+        width: 70%;
+    }
+	#img015{
+        height: 50%;
+        width: 90%;
+    }    
+}
+@media  screen and (min-width: 1200px) 
+{
+    .container{
+        width: 1100px;
+    }
+    body {
+        font-size: 1.1em;
+    }
+	.navT{
+		font-size: 0.6em;
+	}
+    #img003{
+        height: 110%;
+        width: 110%;
+    }
+    #img004{
+        height: 110%;
+        width: 110%;
+    }
+    #img005{
+        height: 80%;
+        width: 50%;
+    }
+    #img006{
+        height: 80%;
+        width: 60%;
+        margin-left: 20%;
+    }
+    #img007, #img008{
+        height: 52%;
+        width: 52%;
+    }
+    #img009 , #img010{
+        height: 60%;
+        width: 60%;
+    }
+    #img011{
+        height: 30%;
+        width: 30%;
+    }
+    #img012{
+        height: 50%;
+        width: 70%;
+    }
+		#img014{
+        height: 50%;
+        width: 70%;
+    }
+	#img015{
+        height: 50%;
+        width: 80%;
+    }
+}
+@media  screen and (min-width: 1300px) 
+{
+    .container{
+        width: 1100px;
+    }
+    body {
+        font-size: 1.1em;      
+    }
+	.navT{
+		font-size: 0.7em;
+	}
+    #img003{
+        height: 110%;
+        width: 110%;
+    }
+    #img004{
+        height: 110%;
+        width: 110%;
+    }
+    #img005{
+        height: 80%;
+        width: 50%;
+    }
+    #img006{
+        height: 80%;
+        width: 65%;
+        margin-left: 17.5%;
+    }
+    #img007, #img008{
+        height: 55%;
+        width: 55%;
+    }
+    #img009 , #img010{
+        height: 65%;
+        width: 55%;
+    }
+    #img011{
+        height: 30%;
+        width: 35%;
+    }
+    #img012{
+        height: 50%;
+        width: 70%;
+    }
+	#img014{
+        height: 50%;
+        width: 70%;
+    }
+	#img015{
+        height: 50%;
+        width: 80%;
+    }
+}
+@media  screen and (max-width: 1380px) {
+	.mainWindow{
+		top:1%;
+	}
+}
+@media  screen and (min-width: 1350px) 
+{
+    .container{
+        width: 1200px;
+    }
+    body {
+        font-size: 1.25em;
+        
+    }
+	.navT{
+		font-size: 0.7em;
+	}
+    #img003{
+        height: 110%;
+        width: 110%;
+    }
+    #img004{
+        height: 110%;
+        width: 110%;
+    }
+    #img005{
+        height: 80%;
+        width: 50%;
+    }
+    #img006{
+        height: 80%;
+        width: 65%;
+        margin-left: 17.5%;
+    }
+    #img007, #img008{
+        height: 55%;
+        width: 55%;
+    }
+    #img009 , #img010{
+        height: 65%;
+        width: 65%;
+    }
+    #img011{
+        height: 30%;
+        width: 35%;
+    }
+    #img012{
+        height: 50%;
+        width: 70%;
+    }
+	#img014{
+        height: 50%;
+        width: 70%;
+    }
+	#img015{
+        height: 50%;
+        width: 80%;
+    }
+}
+@media screen and (min-width: 1570px) {
+	.container{
+        width: 1400px;
+        margin-left: auto;
+    }
+    body {
+        font-size: 1.4em;
+    }
+	.navT{
+		font-size: 0.9em;
+	}
+    #img003{
+        height: 100%;
+        width: 100%;
+    }
+    #img004{
+        height: 100%;
+        width: 100%;
+    }
+    #img005{
+        height: 80%;
+        width: 70%;
+    }
+    #img006{
+        height: 80%;
+        width: 60%;
+        margin:auto;
+    }
+    #img007, #img008{
+        height: 55%;
+        width: 50%;
+    }
+    #img009 , #img010{
+        height: 65%;
+        width: 45%;
+    }
+    #img011{
+        height: 30%;
+        width: 35%;
+    }
+    #img012{
+        height: 50%;
+        width: 70%;
+    }
+	#img014{
+        height: 50%;
+        width: 65%;
+    }
+	#img015{
+        height: 50%;
+        width: 75%;
+    } 	
+}
+@media screen and (min-width: 1890px) {
+   .container{
+        width: 1600px;
+        margin-left: auto;
+    }
+    body {
+        font-size: 1.8em;
+        
+    }
+	.navT{
+		font-size: 1em;
+	}
+    #img003{
+        height: 100%;
+        width: 100%;
+    }
+    #img004{
+        height: 100%;
+        width: 100%;
+    }
+    #img005{
+        height: 80%;
+        width: 60%;
+    }
+    #img006{
+        height: 80%;
+        width: 55%;
+        margin:auto;
+    }
+    #img007, #img008{
+        height: 55%;
+        width: 55%;
+    }
+    #img009 , #img010{
+        height: 65%;
+        width: 45%;
+    }
+    #img011{
+        height: 30%;
+        width: 35%;
+    }
+    #img012{
+        height: 50%;
+        width: 70%;
+    }
+	#img014{
+        height: 50%;
+        width: 70%;
+    }
+	#img015{
+        height: 50%;
+        width: 80%;
+    } 
+}
+.overfix{
+    overflow: auto;
+}
+.marpadfix{
+    margin: 0;
+    padding:0;
+}

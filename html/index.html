@@ -1,0 +1,3229 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Fraktale i Chaos">
+        <meta name="author" content="Cezary Bąk">
+        <title>Fraktale</title>
+
+        <link href="../css/ladowanie.css" rel="stylesheet" type="text/css"/>
+
+        <script src="../biblioteki/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="../biblioteki/jquery.fullPage.min.js" type="text/javascript"></script>
+        <link href="../css/jquery.fullPage.css" rel="stylesheet" type="text/css"/>
+
+        <script src="../biblioteki/bootstrap.min.js" type="text/javascript"></script>
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>   
+        <link href="../css/bootstrap-arrow-buttons.css" rel="stylesheet" type="text/css"/>
+
+        <script src="../js/scripts.js" type="text/javascript"></script>
+
+
+        <link href="../css/Main.css" rel="stylesheet" type="text/css"/>
+
+        <link href='http://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>     
+        <link href="../img/icona.ico" rel="Shortcut icon"/>
+
+    </head>
+    <body>
+        <div id="loader">
+            <div class="ikonka-ladowania">
+                <div class="i_l_1 ikonka_l"></div>
+                <div class="i_l_2 ikonka_l"></div>
+                <div class="i_l_3 ikonka_l"></div>
+                <div class="i_l_4 ikonka_l"></div>
+            </div>
+        </div><!--loader-->
+        <nav id="navi">      
+            <div class="list-group" id="spis">       
+                <div id="tekstura">
+                    <a href="#1strona"><div data-menuanchor="1strona" class="zak"><div class="navT">Wprowadzenie</div></div></a>
+                    <a href="#2strona"><div data-menuanchor="2strona" class="zak"><div class="navT">Podstawowe fraktale</div></div></a>
+                    <a href="#3strona"><div data-menuanchor="3strona" class="zak"><div class="navT">Płaszczyzna zespolona</div></div></a>
+                    <a href="#4strona"><div data-menuanchor="4strona" class="zak"><div class="navT">Systemy funkcji iterowanych</div></div></a>
+                    <a href="#5strona"><div data-menuanchor="5strona" class="zak"><div class="navT">Gra w chaos</div></div></a>
+                    <a href="#6strona"><div data-menuanchor="6strona" class="zak"><div class="navT">Zbiory Julii i Fatou</div></div></a>
+                    <a href="#7strona"><div data-menuanchor="7strona" class="zak"><div class="navT">Zbiór Mandelbrota</div></div></a>
+                    <a href="#8strona"><div data-menuanchor="8strona" class="zak"><div class="navT">Kilka słów o wymiarze</div></div></a>
+                    <a href="#9strona"><div data-menuanchor="9strona" class="zak"><div class="navT">Zakończenie</div></div></a>
+                </div>
+            </div>       
+        </nav> <!-- lista -->
+        <div class="mainWindow">
+            <div class="section" id="str1">            
+                <div class="container">                             
+                    <br />
+                    <div class="col-md-6">
+                        <div class="well"><p>Aplikacja ma za zadanie zapoznanie odbiorcy z pojęciem fraktala.
+                                Przedstawione zostaną klasyczne zbiory zwane fraktalami oraz wyjaśniona
+                                zostanie idea fraktala - samopodobieństwo. Klasyczne zbiory, które dziś
+                                nazywamy fraktalami znane były od bardzo dawna, np. zbiór Cantora, trójkąt
+                                Sierpińskiego czy zbiory Julii lub Mandelbrota ale dopiero dzięki rozwojowi
+                                techniki mogliśmy zobaczyć całe ich piękno. Obiekty fraktalne mają
+                                niewątpliwie jedną cechę wspólną: powstają w ciągu powtarzającego się
+                                procesu wg. ściśle określonych reguł.</p>
+                        </div></div>
+                    <div class="col-md-6">							
+                        <div class="well"><h4>Instrukcja poruszania się po stronie</h4>
+                            <p>Większość stron zawiera swoje slajdy czyli poziome przejścia stron które są rozwinięciami tematu lub dodatkami.<br/>
+                                Po stronie można się poruszać za pomocą paska nawigacji umieszczonego po prawej stronie lub za pomocą kółka myszy lub strzałek na klawiaturze.
+                            </p>
+                        </div></div>                           
+						<div class="col-md-12"><h2>Fraktale - piekno matematyki</h2></div>
+						<p></p>
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> 
+                                <h4>Generatory</h4>
+                            </div>
+                            <div class="panel-body">
+
+                                <a href="#4strona/3">IFS</a><br/>
+                                <a href="#5strona/1">Gra w chaos</a><br/>
+                                <a href="#6strona/2">Zbiór Julii</a><br/>
+                                <a href="#7strona/2">Zbiór Mandelbrota</a><br/>								
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="well"><p>Aplikacja została stworzona z myślą o dużych rozdzielczościach.<br/>
+                                Została przetestowana w rozdzielczości 1024x768 i większych, poniżej tego limitu strona może nie działać poprawnie.
+								<br/>
+								Polecam używać trybu pełnoekranowego(f11).<br/>
+								<input type="button" class="btn btn-info" value="Tryb pełnoekranowy" onclick="toggleFullScreen()">
+								
+                            </p></div>
+                    </div>
+                </div>                                                                       
+            </div><!--Strona 1-->
+            <div class="section" id="str2">
+                <div class="container">
+                    <br />
+                    <div class="col-md-12">
+                        <div class="panel panel-body">
+                            <ul class="nav nav-pills">
+                                <li class="active"><a href="#ts" data-toggle="tab">Trójkąt Sierpińskiego</a>
+                                </li>
+                                <li><a href="#zc" data-toggle="tab">Zbiór Cantora</a>
+                                </li>
+                                <li><a href="#pk" data-toggle="tab">Płatek Kocha</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+
+                            <div class="tab-pane fade in active" id="ts">
+                                <div class="col-md-8"><br />
+                                    <div class="panel panel-default">                      
+                                        <div class="panel-body">
+                                            <canvas id="canvassierptrj" height="370" width="300"></canvas>                      
+                                        </div>
+                                        <div class="panel-footer">
+                                            <button onclick="sierptrjstop()">zatrzymaj</button>
+                                            <button onclick="sierptrjdalej()">dalej</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4"><br/>
+                                    <div class="well"><p>Trójkąt Sierpińskiego otrzymamy usuwając ze środka trójkąta
+                                            równobocznego trójkąt o długości boku równej
+                                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                            <mn>1</mn>
+                                            <mn>3</mn>
+                                            </mfrac>
+                                            </math> długości początkowej, z pozostałymi trzema trójkątami robimy to
+                                            samo i tak w nieskończoność. Obiekt graniczny takiego postępowania nazywamy
+                                            <strong>trójkątem Sierpińskiego</strong>.</p></div></div>
+                            </div>
+                            <div class="tab-pane fade" id="zc">
+                                <div class="col-md-8"><br />
+                                    <div class="panel panel-default">                      
+                                        <div class="panel-body">
+                                            <img id="img013" src="../img/cantor.gif" alt="Zbior Cantora"/>                            
+                                        </div>                      
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-4"><br/><div class="well"><p>Zbiór Cantora powstaje w następujący
+                                            sposób: Ze środka odcinka wycinamy odcinek równy
+                                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                            <mn>1</mn>
+                                            <mn>3</mn>
+                                            </mfrac>
+                                            </math> jego długości, z pozostałymi dwoma częściami robimy to samo i tak
+                                            w nieskończoność. Obiekt graniczny takiego postępowania to właśnie
+                                            <strong>zbiór Cantora</strong></p>
+                                    </div></div>
+                            </div>
+                            <div class="tab-pane fade" id="pk">
+                                <br/> 
+                                <div class="col-md-6">
+                                    <br/>
+                                    <div class="panel panel-default">                      
+                                        <div class="panel-body">
+                                            <canvas id="canvaskoch" height="370" width="300"></canvas>                      
+                                        </div>
+                                        <div class="panel-footer">
+                                            <button onclick="kochstop()">zatrzymaj</button>
+                                            <button onclick="kochdalej()">dalej</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"><br />
+                                    <div class="well"><p>Płatek Kocha czyli fraktal samopodobny.<br/></p>
+                                        <p>Każdy bok trójkąta dzielimy na trzy równe części, po czym zamiast środkowej części wstawiamy dwa boki trójkąta równobocznego o boku długości równej <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                            <mn>1</mn>
+                                            <mn>3</mn>
+                                            </mfrac>
+                                            </math>
+                                            długości początkowej. Procedurę powtarzamy w nieskończoność. Obiekt graniczny takiego postępowania nazywamy płatkiem Kocha.
+                                        </p>
+
+                                    </div>
+                                    <img id="img012" src="../img/kochtransp.png" alt="" height="400" width="600"/><br/>
+                                </div>
+
+                            </div>
+
+                        </div>                 
+                        <br/>
+                    </div>
+                </div>
+            </div><!--Strona 2-->
+            <div class="section" id="str3">
+                <div class="container">
+                    <br/>
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"> 
+                                <h4> Podstawowe pojęcia potrzebne do zrozumienia tematu</h4>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="nav nav-pills">
+                                    <li class="active"><a href="#plz" data-toggle="tab">Liczby Zespolone</a>
+                                    </li>
+                                    <li><a href="#pz" data-toggle="tab">Płaszczyzna zespolona</a>
+                                    </li>
+                                    <li><a href="#it" data-toggle="tab">Iteracja</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="plz">
+                                        <h4>Pojęcie liczb zespolonych</h4>
+                                        <p>Liczby zespolone zostały wprowadzone w potrzebie wyciągania pierwiastków z liczb ujemnych.</p>
+
+                                        <p>Samą liczbę zespoloną nazywamy parę uporządkowanych liczb rzeczywistych z=x+yi, gdzie:</p>
+
+                                        <p>z = liczba zespolona (x,y)</p>
+
+                                        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                            <msup>
+                                            <mi>i</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>=&#x2212;1</p>
+										<div class="col-md-6">
+                                        <h4>Postać algebraiczna:</h4>
+
+                                        <p>Każdą liczbę zespoloną <i>z</i> można zapisać w postaci z=x+yi</p>
+
+                                        <p>z=x+yi dzieli się na :</p>
+
+                                        <p>- cześć rzeczywistą x (re z = x)</p>
+
+                                        <p>- cześć urojoną y (im z = y)</p>
+
+                                        <p>liczbę przeciwną do z=x+yi nazywamy -z=-x&#x2212;yi</p>
+
+                                        <p>modułem liczby zespolonej
+                                            |z|=<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                            <msqrt>
+                                            <msup>
+                                            <mi>a</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            <mo>+</mo>
+                                            <msup>
+                                            <mi>b</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </msqrt>
+                                            </math></p>
+											<p>Moduł liczby zespolonej można więc traktować jako jej odległość na płaszczyźnie zespolonej od początku układu współrzędnych.</p>
+										</div>
+										<div class="col-md-6">
+                                        <h4>Działania na liczbach zespolonych</h4>
+
+                                        <p>z1 = x + yi, z2 = a + bi</p>
+
+                                        <p>z1 = z2</p>
+
+                                        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                            <msup>
+                                            <mi>i</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>=&#x2212;1 więc dodawanie odejmowanie i mnożenie będzie wyglądało
+                                            tak:</p>
+
+                                        <p>z1+z2=(x+a)+(y+b)i</p>
+
+                                        <p>z1&#x2212;z2=(x&#x2212;1)+(y&#x2212;b)i</p>
+
+                                        <p>z1&#x2217;z2=(xa&#x2212;yb)+(xb&#x2212;ya)i </p>
+
+                                        <p>i dzielenie ...</p>
+
+                                        <p><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                            <mfrac>
+                                            <mrow>
+                                            <mi>x</mi>
+                                            <mo>+</mo>
+                                            <mi>yi</mi>
+                                            </mrow>
+                                            <mrow>
+                                            <mi>a</mi>
+                                            <mo>+</mo>
+                                            <mi>bi</mi>
+                                            </mrow>
+                                            </mfrac>
+                                            <mo>=</mo>
+                                            <mfrac>
+                                            <mrow>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                            <mi>x</mi>
+                                            <mo>+</mo>
+                                            <mi>yi</mi>
+                                            </mrow>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                            <mi>a</mi>
+                                            <mo>&#x2212;</mo>
+                                            <mi>bi</mi>
+                                            </mrow>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            </mrow>
+                                            <mrow>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                            <mi>z</mi>
+                                            <mo>+</mo>
+                                            <mi>bi</mi>
+                                            </mrow>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                            <mi>a</mi>
+                                            <mo>&#x2212;</mo>
+                                            <mi>bi</mi>
+                                            </mrow>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            </mrow>
+                                            </mfrac>
+                                            </math>=<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                            <mfrac>
+                                            <mrow>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mrow>
+                                            <mi>xa</mi>
+                                            <mo>+</mo>
+                                            <mi>ya</mi>
+                                            <mo>&#x2212;</mo>
+                                            <mi>xb</mi>
+                                            </mrow>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            <mi>i</mi>
+                                            </mrow>
+                                            <mrow>
+                                            <msup>
+                                            <mi>a</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            <mo>+</mo>
+                                            <msup>
+                                            <mi>b</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </mrow>
+                                            </mfrac>
+                                            </math></p>
+											</div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pz">
+                                        <h4>Płaszczyzna zespolona</h4>
+                                        <p>Płaszczyzna zespolona to model ciała liczb zespolonych.</p>
+										<p>Płaszczyzne zespoloną można utożsamiać z płaszczyną kartezjańską, gdzie każdej liczbie zespolonej postaci z=x + yi odpowiada punkt P = (x,y).</p>
+										<p>Na płaszczyźnie zespolonej występuje "jeden" typ nieskończoności (na osi liczbowej mieliśmy do czynienia z +∞ i -∞). Mówimy, że liczba zespolona <b>z</b> 
+										dąży do nieskończoności jeśli "oddala się" od początku układu współrzędnych, czyli jej moduł dąży +∞.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="it">
+                                        <h4>Iteracja</h4>
+                                        <p>Iteracja to z łaciny powtarzanie. W przypadku funckji polega na kolejnym wyliczaniu wartości funkcji dla ustalonego punktu początkowego.W przypadku funkcji rzeczywistej : f(x)
+                                            = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mi>x</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+1 i punktu startowego x=0.</p>
+
+                                        <p>f(0)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>0</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+1 = 1</p>
+
+                                        <p>f(1)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>1</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+1 = 2</p>
+
+                                        <p>f(2)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>2</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+1 = 5</p>
+
+                                        <p>f(3)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>3</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+1 = 10</p>
+
+                                        <p>f(4)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>4</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+1 = 17</p>
+
+                                        <p>&#x2026;</p>
+
+                                        <p>f(10) = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>10</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+1 = 101</p>
+
+                                        <p>&#x2026;</p>
+										<p>W przypadku funkcji zespolonej f(z)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>z</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+ 3 + i  punktu startowego z = i </p>
+ 
+											<p>f(i) = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>i</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+ 3 + i=-1+3+i=2+i</p>  
+											
+											<p>f(2+i) = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>(2 + i)</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>+ 3 + i =4+4i-1+3+i=6+5i</p>  
+												
+											<p>f(6+5i) = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>(6 + 5i)</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            </math>2+3+i=36+60i-25+3+i=14+61i</p>  
+											<p>...</p>
+												
+											<p></p>
+                                        <p>Itp. w zale&#x17c;no&#x15b;ci ile razy chcemy powtórzy&#x107; daną
+                                            iteracje.</p>
+
+                                        <p></p>
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Strona 3-->
+            <div class="section" id="str4">           
+                <div class="slide">
+                    <br/>
+                    <div class="container">
+                        <div class="panel panel-default">    
+                            <div class="panel-footer">                              
+                                <div onclick="window.location.href = 'index.html#4strona/1'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div>  
+                            <div class="panel-body">
+                                <p>Aby wyjaśnić zasadę działania aplikacji dołączonej na końcu rozdziału
+                                    przedstawię potrzebne twierdzenia matematyczne, często
+                                    nie używając precyzyjnych pojęć matematycznych, lecz powołując się raczej
+                                    na intuicję.</p>
+
+                                <p>Na początku wyjaśnię pojęcie odległości, czyli metryki. Jeśli na
+                                    prostej mamy dane dwa punkty <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math> oraz <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math> to ich odległość określa liczba d(
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>) =| <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>- <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>|, na płaszczyźnie odległść dwóch punktów określa wzór</p>
+
+
+                                <p>d( (<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math> , <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>y</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>), (<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math> , <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>y</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>) ) =<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msqrt>
+                                    <msup>
+                                    <mrow>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>−</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </mrow>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <msup>
+                                    <mrow>
+                                    <mo>+</mo>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>y</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>−</mo>
+                                    <msub>
+                                    <mi>y</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </mrow>
+                                    <mn>2</mn>
+                                    </msup>
+                                    </msqrt>
+                                    </math></p>
+
+
+                                <p>W teorii fraktali używa się metryki Hausdorffa. W sensie tej metryki dwa
+                                    zbiory A i B (np. podzbiory płaszczyzny) leżą blisko siebie, jeśli każdy
+                                    punkt zbioru A leży "blisko" jakiegoś punktu zbioru B i na odwrót. Oznacza to,
+                                    że np. dwa koła A i B, leżące jedno wewnątrz drugiego wcale nie leżą
+                                    "blisko" w sensie metryki Hausdorffa. </p>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <p><img alt="blisko" id="img003" src="../img/blisko.png" width="100" height="100" /></p>
+                                            </div>
+                                            <div class="panel-footer">
+                                                Blisko
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <p><img alt="daleko" id="img004" src="../img/daleko.png" width="100" height="100" /></p>
+                                            </div>
+                                            <div class="panel-footer">
+                                                Daleko
+                                            </div>  
+                                        </div>
+                                    </div>
+
+
+                                    <p></p>
+
+                                    <p></p>
+                                    <div class="col-md-8">
+                                        <p>Potrzebne będzie również wprowadzenie pojęcia przekształcenia
+                                            zwężającego. Przekształcenie, funkcję f:X→X nazywamy zwężającym,
+                                            jeśli istnieje liczba α∈(0,1) taka, że dla dowolnych dwóch liczb x,y
+                                            należących do zbioru X (w naszym przypadku X jest to część płaszczyzny)
+                                            zachodzi nierówność d(f(x),f(y))≤αd(x,y). Liczbę α nazywamy
+                                            współczynnikiem zwężania.</p>
+
+                                        <p>Podstawą do dalszych rozważań będzie twierdzenie polskiego matematyka
+                                            Stefana Banacha o punkcie stałym, które mówi, że w każdej przestrzeni
+                                            metrycznej zupełnej X, jeśli f jest przekształceniem zwężającym tej
+                                            przestrzeni to istnieje dokładnie jeden punkt stały tego przekształcenia,
+                                            tzn. taki punkt x, że f(x)=x. </p>
+                                    </div>
+                                </div>
+                                <p>Za przestrzeń X przyjmuję podzbiór płaszczyzny kartezjańskiej spełniający warunki twierdzenia.</p>
+
+                                <p>W dowodzie twierdzenia Banacha budowany jest pewien ciąg w następujący
+                                    sposób: punkt <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math> wybierany jest dowolnie następnie <br />
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <mi>f</mi>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math> , <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <mi>f</mi>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math> ,...., <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <mi>f</mi>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mrow>
+                                    <mi>n</mi>
+                                    <mo>−</mo>
+                                    <mn>1</mn>
+                                    </mrow>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>. Ciąg <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    </math> dobrze przybliża rozwiązanie równania f(x)=x, zachodzi przy tym
+                                    nierówność </p>
+                                <p>d(<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <mi>x</mi>
+                                    </math>)≤<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mfrac>
+                                    <msup>
+                                    <mi>α</mi>
+                                    <mrow>
+                                    <mi>n</mi>
+                                    <mo>−</mo>
+                                    <mn>1</mn>
+                                    </mrow>
+                                    </msup>
+                                    <mrow>
+                                    <mn>1</mn>
+                                    <mo>−</mo>
+                                    <mi>α</mi>
+                                    </mrow>
+                                    </mfrac>
+                                    </math>d(<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>). (*)</p>
+
+                                <p>Nierówność mówi, że przyjmując za rozwiązanie równania f(x)=x punkt
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    </math> popełniamy błąd nie większy od prawej strony. Ponieważ wyrażenie
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mfrac>
+                                    <msup>
+                                    <mi>α</mi>
+                                    <mrow>
+                                    <mi>n</mi>
+                                    <mo>−</mo>
+                                    <mn>1</mn>
+                                    </mrow>
+                                    </msup>
+                                    <mrow>
+                                    <mn>1</mn>
+                                    <mo>−</mo>
+                                    <mi>α</mi>
+                                    </mrow>
+                                    </mfrac>
+                                    </math> dąży do 0 ( bo α∈(0,1)), więc prawa strona nierówności może być liczbą
+                                    dowolnie małą. </p>
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div></div><!-- str3 slide-->
+                <div class="slide">
+                    <br/>
+                    <div class="container">
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#4strona'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                                <div onclick="window.location.href = 'index.html#4strona/2'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div>  
+                            <div class="panel-body">
+                                <p>Do konstrukcji fraktali będziemy używać tzw. przekształceń afinicznych.
+                                    Jeśli P(x,y) jest pewnym punktem płaszczyzny, to przekształcenie
+                                    w(P)=(u,v)=(ax+by+e,cx+dy+f), gdzie a,b,d,d,e,f∈R nazywa się
+                                    przekształceniem afinicznym płaszczyzny. Mając na płaszczyźnie dwa
+                                    trójkąty o wierzchołkach <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>P</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <msub>
+                                    <mi>y</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math> , <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>P</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <msub>
+                                    <mi>y</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>P</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <msub>
+                                    <mi>y</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math> oraz <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>Q</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>u</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <msub>
+                                    <mi>v</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>Q</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>u</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">2</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <msub>
+                                    <mi>v</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>Q</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>u</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">3</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <msub>
+                                    <mi>v</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math> możemy znaleźć odwzorowanie afiniczne, przekształcające jeden z nich na
+                                    drugi. Wystarczy rozwiązać układ sześciu równań z sześcioma niewiadomymi.W aplikacji do rozwiązania układu równań używam wzorów Cramera.</p>
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                <mo>{</mo>
+                                <mrow>
+                                <mtable>
+                                <mtr>
+                                <mtd>
+                                <mi>a</mi>
+                                <msub>
+                                <mi>x</mi>
+                                <mn>1</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>b</mi>
+                                <msub>
+                                <mi>y</mi>
+                                <mn>1</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>e</mi>
+                                <mo>=</mo>
+                                <msub>
+                                <mi>u</mi>
+                                <mn>1</mn>
+                                </msub>
+                                </mtd>
+                                </mtr>
+                                <mtr>
+                                <mtd>
+                                <mi>c</mi>
+                                <msub>
+                                <mi>x</mi>
+                                <mn>1</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>d</mi>
+                                <msub>
+                                <mi>y</mi>
+                                <mn>1</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>f</mi>
+                                <mo>=</mo>
+                                <msub>
+                                <mi>v</mi>
+                                <mn>1</mn>
+                                </msub>
+                                </mtd>
+                                </mtr>
+                                <mtr>
+                                <mtd>
+                                <mi>a</mi>
+                                <msub>
+                                <mi>x</mi>
+                                <mn>2</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>b</mi>
+                                <msub>
+                                <mi>y</mi>
+                                <mn>2</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>e</mi>
+                                <mo>=</mo>
+                                <msub>
+                                <mi>u</mi>
+                                <mn>2</mn>
+                                </msub>
+                                </mtd>
+                                </mtr>
+                                <mtr>
+                                <mtd>
+                                <mi>c</mi>
+                                <msub>
+                                <mi>x</mi>
+                                <mn>2</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>d</mi>
+                                <msub>
+                                <mi>y</mi>
+                                <mn>2</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>f</mi>
+                                <mo>=</mo>
+                                <msub>
+                                <mi>v</mi>
+                                <mn>2</mn>
+                                </msub>
+                                </mtd>
+                                </mtr>
+                                <mtr>
+                                <mtd>
+                                <mi>a</mi>
+                                <msub>
+                                <mi>x</mi>
+                                <mn>3</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>b</mi>
+                                <msub>
+                                <mi>y</mi>
+                                <mn>3</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>e</mi>
+                                <mo>=</mo>
+                                <msub>
+                                <mi>u</mi>
+                                <mn>3</mn>
+                                </msub>
+                                </mtd>
+                                </mtr>
+                                <mtr>
+                                <mtd>
+                                <mi>c</mi>
+                                <msub>
+                                <mi>x</mi>
+                                <mn>3</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>d</mi>
+                                <msub>
+                                <mi>y</mi>
+                                <mn>3</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>f</mi>
+                                <mo>=</mo>
+                                <msub>
+                                <mi>v</mi>
+                                <mn>3</mn>
+                                </msub>
+                                </mtd>
+                                </mtr>
+                                </mtable>
+                                </mrow>
+                                </mrow>
+                                </math>
+<p></p>
+<br/>
+                                <div class="row">
+                                    
+                                    <div class="col-md-8">
+                                        <p>Metoda konstrukcji fraktali polegać będzie na doborze odpowiednich
+                                            odwzorowań afinicznych, które przekształcają trójkąt na trójkąt.
+                                            Popatrzmy na rysunek obok:</p> <p>Nazwijmy trójkąt ABC trójkątem bazowym. Rozwiązując odpowiednie
+                                    układy równań znajdziemy odwzorowania
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>,<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>,<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    </math> , które przekształcą trójkąt zawierający paprotkę na odpowiednie
+                                    jej części objęte trójkątami
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>T</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>T</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>,<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>T</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    </math>. Rozpatrywać będziemy odwzorowanie <b>w</b>, które jest sumą odwzorowań
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>,<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>,<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    </math> , czyli w(A)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <mi>A</mi>
+                                    <mo>)</mo>
+                                    <mo>∪</mo>
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <mi>A</mi>
+                                    <mo>)</mo>
+                                    <mo>∪</mo>
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <mi>A</mi>
+                                    <mo>)</mo>
+                                    </math>. Przekształcenie <b>w</b> jest przekształceniem zwężającym (przekształca
+                                    "duży" trójkąt na małe). Jeśli przyjmiemy pojęcie odległości jako
+                                    metrykę Hausdorffa opisaną poprzednio, to odwzorowanie <b>w</b> (zwane operatorem
+                                    Hutchinsona) spełnia założenia twierdzenia Banacha o punkcie stałym. Punkt
+                                    stały tego odwzorowania nazywa się fraktalem lub atraktorem. Równoważnie możemy stwierdzić,
+                                    że fraktalem (atraktorem) jest granica ciągu
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    </math> opisanego w dowodzie twierdzenia Banacha.</p>
+
+</div><div class="col-md-4"><img alt="paprotka" id="img005" src="../img/paprotka1.png" width="300" height="262"/></div></div>
+
+
+                                
+
+                            </div>
+
+                        </div></div></div><!-- str3 slide1-->
+                <div class="slide">
+                    <br/>
+                    <div class="container">
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#4strona/1'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                                <div onclick="window.location.href = 'index.html#4strona/3'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div>  
+                            <div class="panel-body">
+                                <p> Matematyczne twierdzenia
+                                    zapewniają zatem istnienie pewnych obiektów granicznych, ale
+                                    pojawiają się dwa kluczowe problemy:</p>
+                                <p>1) nawet przy trzech odwzorowaniach
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mi>i</mi>
+                                    </msub>
+                                    </math> i przyjęciu za zbiór A pojedynczy punkt płaszczyzny już przy
+                                    jednokrotnym zastosowaniu odwzorowania <b>w</b> otrzymujemy 3 punkty, po dwukrotnym
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">3</mn>
+                                    <mn>2</mn>
+                                    </msup>
+                                    </math> punktów następnie <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">3</mn>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">3</mn>
+                                    </msup>
+                                    </math>, a po <b>k</b> krokach <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">3</mn>
+                                    <mi>k</mi>
+                                    </msup>
+                                    </math> punktów. Liczba <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">3</mn>
+                                    <mi>k</mi>
+                                    </msup>
+                                    </math> bardzo szybko rośnie, a przecież aby wyznaczyć punkty w kroku k-tym
+                                    musimy pamiętać punkty z kroku <b>k</b>-1 szego</p>
+
+                                <p>2) czy fraktal wygenerowany w opisywany sposób jest przewidywalny czy jest
+                                    tylko przypadkowym obiektem generowanym w ciągu iteracji?</p>
+
+                                <p>Na pierwsze i drugie pytanie matematyka daje odpowiedzi. </p>
+
+                                <p>Jeśli chodzi o problem pierwszy okazuje się, że istnieje tzw.
+                                    probabilistyczny sposób konstrukcji fraktali. Przyporządkujmy każdemu z
+                                    odwzorowań <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">i</mi>
+                                    </msub>
+                                    </math> prawdopodobieństwo <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>p</mi>
+                                    <mi>i</mi>
+                                    </msub>
+                                    </math> w taki sposób, że suma prawdopodobieństw
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>p</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>+</mo>
+                                    <msub>
+                                    <mi>p</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>+</mo>
+                                    <mo>.</mo>
+                                    <mo>.</mo>
+                                    <mo>.</mo>
+                                    <mo>+</mo>
+                                    <msub>
+                                    <mi>p</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    </math> wynosi 1. Następnie wybieramy dowolny punkt
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>∈R. Losujemy jedno z odwzorowań
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mi>i</mi>
+                                    </msub>
+                                    </math> i za pomocą tego odwzorowania przekształcamy punkt
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math> otrzymując punkt <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <mi>f</mi>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>. Następnie znów losujemy jedno z odwzorowań przekształcamy punkt
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">1</mn>
+                                    </msub>
+                                    </math> otrzymując punkt<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <mi>f</mi>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math> itd. Okazuje się, że fraktal wygenerowany w ten sposób będzie
+                                    "dowolnie mało" różnił się od fraktala wygenerowanego metodą opisaną
+                                    powyżej. Napisana przeze mnie aplikacja korzysta właśnie z tej metody.</p>
+                                <p>
+                                    Na pytanie 2 częściową odpowiedź daje nierówność, którą wyżej
+                                    oznaczyłem w pierwszym slajdzie (*). Wynika z niej,że jeśli A jest fraktalem wygenerowanym przez
+                                    ciąg <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">x</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math> obrazem początkowym to prawdziwa będzie nierówność 
+                                </p>
+                                <p>h(<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">A</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">0</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">A</mi>
+                                    </math>) ≤<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mfrac>
+                                    <msup>
+                                    <mi>α</mi>
+                                    <mn>0</mn>
+                                    </msup>
+                                    <mrow>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">1</mn>
+                                    <mo>−</mo>
+                                    <mi>α</mi>
+                                    </mrow>
+                                    </mfrac>
+                                    </math> h(<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <mi>w</mi>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">0</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mfrac>
+                                    <mn>1</mn>
+                                    <mrow>
+                                    <mn>1</mn>
+                                    <mo>−</mo>
+                                    <mi>α</mi>
+                                    </mrow>
+                                    </mfrac>
+                                    </math> h(<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">0</mn>
+                                    </msub>
+                                    <mo>,</mo>
+                                    <mi>w</mi>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">0</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>)</p>
+
+                                <p>Metryka h oznacza tu oczywiście metrykę Hausdorffa. Jeśli teraz postawimy
+                                    sobie zadanie znalezienia takiego odwzorowania <b>w</b> aby fraktal A był jak
+                                    najbardziej bliski (w sensie metryki Hausdorffa) obrazowi początkowemu
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">0</mn>
+                                    </msub>
+                                    </math> to z powyższej nierówności wynika, że odległość ta będzie
+                                    niejako kontrolowana przez jednokrotne zastosowanie odwzorowania <b>w</b>. Oznacza to,
+                                    że jeśli obraz <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>w</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    <mo>∪</mo>
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo xmlns="http://www.w3.org/1998/Math/MathML">(</mo>
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math>∪...∪<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>w</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    <mo>(</mo>
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    <mo>)</mo>
+                                    </math></p>
+
+                                <p>będzie bliski <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math> to tym bardziej wygenerowany fraktal będzie bliski obrazowi
+                                    początkowemu <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>A</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">0</mn>
+                                    </msub>
+                                    </math>. Dlatego dość łatwo jest generować (kodować) obrazy samopodobne,
+                                    gdyż "pokrywając" obraz początkowy trójkątem (na poprzednim rysunku ABC) i
+                                    szukając odwzorowań, które przekształcą całą paprotkę na pewne jej
+                                    części mamy pewność, że już po jednokrotnym zastosowaniu odwzorowania <b>w</b>
+                                    obraz będzie "bliski" <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">A</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math> </p></div>
+
+                        </div></div></div><!-- str3 slide2-->
+                <div class="slide">
+                    <br/>
+                    <div class="container">
+                        <div class="panel panel-default">    
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#4strona/2'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+
+                            </div>  
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div id="Gen_mod">
+                                            <canvas id="canvasDIS"></canvas>
+                                            <canvas id="canvasIN"></canvas>                                   
+                                        </div>
+
+                                        <div id="canvascomb">
+                                            <canvas id="canvasOUT"></canvas>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="col-md-4">
+                                    <div class="well">
+                                        <input type="text" id="ODMAX" value="15000" style="width: 60px;">
+                                        <input type="button" class="btn btn-success" value="Licz" onclick="licz()"> 
+                                        <input type="button" class="btn btn-warning" value="Cofnij" onclick="cofnij()">
+                                        <input type="button" class="btn btn-info" value="log" onclick="log()"><br />
+
+                                        <input type="button" class="btn btn-danger" value="Wyczyść lewo" onclick="czyscL()">
+                                        <input type="button" class="btn btn-danger" value="Wyczyść prawo" onclick="czyscP()"><br />
+                                        Kolory: <select id="Czmien" class="btn-success">
+                                            <option>Czarny</option>
+                                            <option>Czerwony</option>
+                                            <option>Zielony</option>
+                                            <option>niebieski</option>
+                                        </select>
+                                        <input type="button" value="Zmień" onclick="Czmien()">
+                                        <br />
+                                        Obiekty
+                                        <br/>
+                                        <input type="button" class="btn btn-warning" value="Paprotka" onclick="GWW = paprotka;wstaw_obrazek();">
+                                        <input type="button" class="btn btn-warning" value="Drzewko" onclick="GWW = drzewko;wstaw_obrazek();">
+                                        <input type="button" class="btn btn-warning" value="Trójkąt" onclick="GWW = trojkat;wstaw_obrazek();">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-8"><div class="well"><h4>Instrukcja</h4><p>Z menu obiekty samopodobne wybieramy obraz. "Obrysowując" go trójkątem ustalamy trójkąt bazowy ABC. Następnie klikając na części obrazka podobne do całości ustalamy trójkąty na które zostanie odwzorowany trójkąt bazowy (czyli ustalamy odwzorowania w1,w2,w3,...,wn) ważna jest kolejność klikania.
+                                            <br/>Po kliknięciu przycisku licz w prawym oknie wyświetli się fraktal który jest granicą wygenerowanych IFS.</p>
+                                        <button onclick="fullPageBlockScroll();" type="button" class="btn btn-info" data-toggle="modal" data-target="#zdj003">Pokaz</button>
+                                    </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- str3 slide3-->
+            </div><!--Strona 4-->
+            <div class="section" id="str5">
+                <div class="slide">
+                    <div class="container"> 
+                        <br/>
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+
+
+
+                                <div onclick="window.location.href = 'index.html#5strona/1'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <p>Gra w chaos nazwa na tak przez brytyjskiego matematyka M.F. Bransleya
+                                    pokazuje że ciąg teoretycznie chaotycznych czynności prowadzi do
+                                    przewidywalnych efektów.</p>
+                                <p>Zasady gry są bardzo proste. Rysujemy trójkąt równoboczny (choć nie
+                                    jest to konieczne założenie) oznaczamy jego wierzchołki przez 1,2,3 .</p>
+                                <p>Wybieramy dowolny punkt A wewnątrz trójkąta. Następnie losujemy jeden z
+                                    wierzchołków. W środku odcinka między punktem A a wylosowanym
+                                    wierzchołkiem stawiamy punkt <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>.</p>
+                                <p>Następnie znów losujemy jeden z wierzchołków trójkąta i stawiamy punkt
+                                    w środku odcinka między wybranym wierzchołkiem a punktem
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>x</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>.Czynność tą powtarzamy kilka tysięcy razy.</p>
+                                <p>Okazuje się, że bez względu na wybór punktu początkowego A obiektem
+                                    granicznym tego postępowania jest trójkąt Sierpińskiego.</p>                                      
+                            </div>                              
+                        </div>
+                    </div>   
+                </div><!-- str4 slide-->
+                <div class="slide">
+                    <div class="container">
+                        <br/>
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#5strona'" class="btn btn-success strL btn-arrow-left">cofnij</div>                         
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="col-md-10">
+                                    <canvas id="grawchaos" height="500" width="500"></canvas>
+                                </div>
+                                <div class="col-md-2">
+                                    Ilość iteracji: <input type="text" id="IteracjaChaos" size="13" value="20000"><br/>
+                                    <input type="button" value="Rysuj" onclick="RysujCos()">
+                                </div>
+                            </div>                              
+                        </div>
+                    </div>
+                </div><!-- str4 slide1-->
+            </div><!--Strona 5-->
+            <div class="section" id="str6">          
+                <div class="slide">
+                    <br/>
+                    <div class="container">
+                        <div class="panel panel-default">    
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#6strona/1'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div>  
+                            <div class="panel-body">
+                                <p>Teoria zbiorów Julii i Fatou wiąże się nierozerwalnie z iteracją
+                                    wymiernych funkcji zespolonych. Ja skupię się na szczególnym przypadku
+                                    funkcji wymiernej,na funkcji kwadratowej postaci<br />
+                                    f(z)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>, gdzie z oraz c są liczbami zespolonymi. Pojęcie iteracji
+                                    wyjaśniłem w zakładce płaszczyzna zespolona. Basenem przyciągania punktu ∞ odpowiadającym
+                                    funkcji f nazywamy zbiór A(∞) tych liczb zespolonych z dla których ciąg
+                                    iteracji <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>f</mi>
+                                    <mi>n</mi>
+                                    </msup>
+                                    <mo>(</mo>
+                                    <mi>z</mi>
+                                    <mo>)</mo>
+                                    </math> dąży do nieskończoności. Zbiór Julii odpowiadający funkcji f to
+                                    "brzeg" zbioru A(∞). Dopełnienie zbioru Julli (czyli te liczby, które nie
+                                    należą do zbioru Julli) nazywa się zbiorem Fatou. </p>
+                                
+                                <div class="col-md-6"><p>Istnieje twierdzenie, które pomaga znaleźć przy pomocy komputera punkty
+                                    należące do A(∞).</p>
+
+                                <p>Jeśli f(z)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>, oraz z jest liczbą zespoloną taką, że |z|≥|c| i |z| &gt;2 to liczba z
+                                    należy do A(∞).</p>
+
+                                <p style="text-align:center;">Dowód twierdzenia jest dość prosty. Niech z
+                                    będzie liczbą zespoloną spełniającą założenia twierdzenia. <br/>Istnieje
+                                    zatem liczba ε&gt;0 taka, że |z|=2+ ε. Ze znanej nierówności trójkąta
+                                    dostajemy, że <br />|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>|=|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    <mo>−</mo>
+                                    <mi>c</mi>
+                                    </math>|≤|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>| +|c|<br/> stąd oraz z założenia wynika, że<br/>
+                                    |<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>|≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    </math>|-|c|≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    </math>|-|z|=|z|(|z|-1)=|z|(1+ε)</p></div>
+<div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <img id="img006" class="img-responsive" alt="julia" src="../img/juliaz.png" width="400" height="300" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- str6 slide-->           
+                <div class="slide">
+                    <br/>
+                    <div class="container">
+                        <div class="panel panel-default">    
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#6strona'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                                <div onclick="window.location.href = 'index.html#6strona/2'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div> 
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <img id="img007" alt="julia" src="../img/008.PNG" width="400" height="300" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p >Zbudujmy teraz ciąg iteracji dla funkcji f.
+                                        Startujemy od punkty <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msub>
+                                        <mi>z</mi>
+                                        <mn>0</mn>
+                                        </msub>
+                                        </math>. Na mocy ostatniej nierówności otrzymujemy, że</p>
+                                    |<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>|=|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>|≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>|(1+ε)<br/>
+
+                                    |<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">z</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    </math>|=|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>|≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>|(1+ε)≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mrow>
+                                    <mo>(</mo>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>ε</mi>
+                                    <mo>)</mo>
+                                    </mrow>
+                                    <mn>2</mn>
+                                    </msup>
+                                    </math><br/>
+
+                                    |<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">z</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    </math>|=|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>|≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">2</mn>
+                                    </msub>
+                                    </math>|(1+ε)≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mrow>
+                                    <mo>(</mo>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>ε</mi>
+                                    <mo>)</mo>
+                                    </mrow>
+                                    <mn>3</mn>
+                                    </msup>
+                                    </math><br/>
+
+                                    ...............<br/>
+
+                                    |<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">z</mi>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">n</mi>
+                                    </msub>
+                                    </math>|=|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msubsup>
+                                    <mi>z</mi>
+                                    <mrow>
+                                    <mi xmlns="http://www.w3.org/1998/Math/MathML">n</mi>
+                                    <mo>−</mo>
+                                    <mn>1</mn>
+                                    </mrow>
+                                    <mn xmlns="http://www.w3.org/1998/Math/MathML">2</mn>
+                                    </msubsup>
+                                    </math>+c|≥|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mrow>
+                                    <mo>(</mo>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>ε</mi>
+                                    <mo>)</mo>
+                                    </mrow>
+                                    <mi>n</mi>
+                                    </msup>
+                                    </math><br/>
+
+                                    <p>Ponieważ <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                        <mrow>
+                                        <mo>(</mo>
+                                        <mn>1</mn>
+                                        <mo>+</mo>
+                                        <mi>ε</mi>
+                                        <mo>)</mo>
+                                        </mrow>
+                                        <mi>n</mi>
+                                        </msup>
+                                        </math> dąży do ∞ to również ciąg modułów
+                                        {|<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msub>
+                                        <mi xmlns="http://www.w3.org/1998/Math/MathML">z</mi>
+                                        <mi>n</mi>
+                                        </msub>
+                                        </math>|} dąży do nieskończoności a co za tym idzie również ciąg
+                                        {<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msub>
+                                        <mi>z</mi>
+                                        <mi xmlns="http://www.w3.org/1998/Math/MathML">n</mi>
+                                        </msub>
+                                        </math>} dąży do nieskończoności. </p>
+
+                                    <p>Z powyższego twierdzenia, wynika następujący algorytm generowania zbioru
+                                        Julii:</p>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>1) Biorę liczbę z=a+bi z kwadratu o środku w (0,0) i boku 4 i podstawiam do
+                                            funkcji f. Niech c=p+qi. Otrzymamy po pierwszym kroku iteracji</p>
+                                        f(a+bi)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                        <mrow>
+                                        <mo xmlns="http://www.w3.org/1998/Math/MathML">(</mo>
+                                        <mi>a</mi>
+                                        <mo>+</mo>
+                                        <mi>bi</mi>
+                                        <mo>)</mo>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        </msup>
+                                        </math>+p+qi = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                        <mi>a</mi>
+                                        <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <mn>2</mn>
+                                        <mi>abi</mi>
+                                        <mo>+</mo>
+                                        <msup>
+                                        <mi>b</mi>
+                                        <mn>2</mn>
+                                        </msup>
+                                        </math>+p+qi=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                        <mi>a</mi>
+                                        <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <msup>
+                                        <mi>b</mi>
+                                        <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <mi>p</mi>
+                                        </math>+(2ab+q)i<p></p>
+
+                                        <p>2) Badam moduł otrzymanej liczby zespolonej. Jeśli moduł okaże się
+                                            większy od 2 to dana liczba należy do A(∞) i możemy punkt odpowiadający
+                                            liczbie z oznaczyć kolorem s. W przeciwnym wypadku otrzymaną liczbę znów
+                                            wstawiamy do funkcji f i tak powiedzmy 300 razy. Jeśli po tej ilości iteracji
+                                            moduł jest mniejszy od 2 to punkt odpowiadający liczbie z oznaczyć kolorem
+                                            t. W ten sposób dostaniemy rozgraniczenie płaszczyzny na zbiory Fatou i
+                                            Julii.</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <img id="img008" alt="julia" src="../img/011.PNG" width="400" height="300" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- str6 slide1-->
+                <div class="slide">
+                    <br/>
+                    <div class="container">
+                        <div class="panel panel-default">    
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#6strona/1'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                            </div> 
+                            <div class="panel-body">
+
+                                <div class="col-md-8">
+                                    <canvas id="canvasJulia" height="500" width="500"></canvas>
+                                </div>
+
+                                <div class="col-md-4">
+                                    Współrzedne użyte do generowanie fraktala<br/>
+                                    p: <input type="text" id="Crze" size="4" value="-0.773333"><br/>
+                                    q: <input type="text" id="Curo" size="4" value="0.14"><br/>
+                                    Kolor: <select id="kolor2">
+                                        <option>żółty</option>
+                                        <option>czerwony</option>
+                                        <option>fioletowy</option>
+                                        <option>zielony</option>
+                                    </select><br/>
+                                    Ilość iteracji: <input type="text" id="IteracjaJul" size="13" value="150"><br/>
+                                    <input type="button" value="Rysuj" onclick="inicjacjaJul()"><br/>
+                                    <br/>
+                                    <div class="well"><h3>Instrukcja do generatora</h3>
+                                        <p>
+                                            W powyższe pola tekstowe należy wpisać część rzeczywistą p i urojoną q liczby <i>c</i> dla funkcji<br/> 
+                                            f(z)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mi>z</mi>
+                                            <mn>2</mn>
+                                            </msup>
+                                            <mo>+</mo>
+                                            <mi>c</mi>
+                                            </math>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- str6 slide2-->
+            </div><!--Strona 6-->
+            <div class="section" id="str7">
+                <div class="slide">
+                    <div class="container">
+                        <br />
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+
+                                <div onclick="window.location.href = 'index.html#7strona/1'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div> 
+                            <div class="panel-body">
+                                <br />
+                                <p>Konstrukcja zbioru Mandelbrota przebiega podobnie do konstrukcji zbioru
+                                    Julii. Znów rozpatrujemy funkcję
+                                    f(z)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>. Zbiorem Mandelbrota nazywamy zbiór wszystkich liczb zespolonych c dla
+                                    których ciąg iteracji o punkcie początkowym
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>=0 , tzn. ciąg <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>=c, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <msup>
+                                    <mi>c</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <msup>
+                                    <mrow>
+                                    <mo>(</mo>
+                                    <msup>
+                                    <mi>c</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    <mo>)</mo>
+                                    </mrow>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math> ,... jest ograniczony.<br/> Można udowodnić twierdzenie analogiczne do
+                                    twierdzenia pomocnego przy konstrukcji zbioru Julii:</p>
+
+                                <p>Jeśli ciąg modułów iteracji <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>0</mn>
+                                    </msub>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>1</mn>
+                                    </msub>
+                                    </math>=c, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <msup>
+                                    <mi>c</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mn>3</mn>
+                                    </msub>
+                                    <mo>=</mo>
+                                    <msup>
+                                    <mrow>
+                                    <mo>(</mo>
+                                    <msup>
+                                    <mi>c</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    <mo>)</mo>
+                                    </mrow>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mi>c</mi>
+                                    </math> ,... jest ograniczony przez 2, to liczba c należy do zbioru Mandelbrota. </p>
+
+                                <p>Zatem algorytm konstrukcji zbioru Mandelbrota przebiega niemal identycznie
+                                    jak algorytm konstrukcji zbioru Julii.</p>
+
+                                <p></p>
+
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <img id="img009" alt="blisko" src="../img/mandelbrotyellow.PNG" width="350" height="300" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <img id="img010" alt="blisko" src="../img/012.PNG" width="350" height="300" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p></p>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!-- str7 slide-->
+                <div class="slide">
+                    <div class="container">
+                        <br />
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#7strona'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                                <div onclick="window.location.href = 'index.html#7strona/2'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div> 
+                            <div class="panel-body">
+                                <p>Największe tajemnice kryje brzeg zbioru Mandelbrota. Matematycy próbują
+                                    uzasadnić podobieństwo zbiorów Julii i pewnych fragmentów zbioru
+                                    Mandelbrota.Na ten temat w internecie dostępna jest 
+									<a href="../TanLei.pdf" target="_blank" type="application/pdf">praca chińskiego matematyka Tan Lei</a>									
+									</p>
+									<p>
+									 Za pracę nad tym zbiorem francuski matematyk Jean-Christopher
+                                    Yoccoz został w 1994 roku nagrodzony najcenniejszą nagrodą w dziedzinie
+                                    matematyki medalem Fieldsa.<br/>Napisana przeze mnie aplikacja "Zbiór Mandelbrota
+                                    jako mapa zbiorów Julii" pokazuje odwzorowanie punktów zbioru Mandelbrota
+                                    na odpowiadające im zbiory Julli.</p>
+
+                                <p></p>
+
+                                <p>Bardzo ciekawe właściwości posiada "szyjka" zbioru Mandelbrota. Znajduje
+                                    się ona na płaszczyźnie zespolonej dla c = -0.75 +0i. Badając jej grubość
+                                    sprawdzamy ilu iteracji potrzeba aby ciąg iteracji funkcji
+                                    f(z)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msup>
+                                    <mi>z</mi>
+                                    <mn>2</mn>
+                                    </msup>
+                                    <mo>−</mo>
+                                    </math>0.75 + εi "uciekł" do nieskończoności a dokładniej ilu iteracji
+                                    potrzeba aby |<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <msub>
+                                    <mi>z</mi>
+                                    <mi>n</mi>
+                                    </msub>
+                                    </math>| &gt; 2. Dostajemy następujące zależności:</p>
+
+                                <p style="text-align:center;margin-left:auto;margin-right:auto;"></p>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <img id="img011" alt="szyjka zbioru mandelbrota" src="../img/013.PNG" width="200" height="250" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <caption></caption>
+                                        <col />
+                                        <col />
+                                        <tbody>
+                                            <tr>
+                                                <td style="text-align:center;margin-left:auto;margin-right:auto;">liczba
+                                                    ε</td>
+                                                <td style="text-align:center;margin-left:auto;margin-right:auto;">ilość
+                                                    iteracji</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center;margin-left:auto;margin-right:auto;">0.1</td>
+                                                <td style="text-align:center;margin-left:auto;margin-right:auto;">33</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">0.01</td>
+                                                <td style="text-align:center;margin-left:auto;margin-right:auto;">315</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">0.001</td>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">3143</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">0.0001</td>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">31417</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">0.00001</td>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">314160</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">0.000001</td>
+                                                <td
+                                                    style="text-align:center;margin-left:auto;margin-right:auto;">31411593</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    Liczba iteracji przypomina znaną wszystkim liczbę π !
+
+                                    <p>Mówiąc ściślej jeśli pomnożymy liczbę iteracji przez ε dostaniemy
+                                        liczbę π z bardzo dobrą dokładnością. Dokładne informacje na temat tej
+                                        własności zbioru Mandelbrota można znaleźć w książce (J. Guckenheimera i
+                                        P. Holmesa, Nonlinear Oscillations, Dynamical Systems and Bifurcations of
+                                        Vector Fields, Springer-Verlag, New York 1983, str. 334).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- str7 slide1-->
+                <div class="slide">
+                    <div class="container">
+                        <br />
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#7strona/1'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                            </div> 
+                            <div class="panel-body">
+
+
+                                <div class="col-md-7">
+                                    <canvas id="canvasMan" height="500" width="500"></canvas>
+                                </div>
+                                <div class="col-md-5">
+                                    <canvas id="MandelToJul" height="250" width="250"></canvas><br/>
+
+
+
+
+                                    Kolor: <select id="kolor3">
+                                        <option>żółty</option>
+                                        <option>czerwony</option>
+                                        <option>fioletowy</option>
+                                        <option>zielony</option>
+                                    </select><br/>
+
+                                    Iteracja: <input type="text" id="IteracjaMan" size="13" value="150"><br/>
+                                    Kliknięty punkt X,Y: <input type="text" id="OutX2" size="4" value="">
+                                    <input type="text" id="OutY2" size="4" value=""><br/>
+                                    <input type="button" value="Rysuj" onclick="inicjacjaMan()">
+                                    <p></p>
+
+
+                                    <div class="row col-md-12"><div class="well"><h4>Instrukcja</h4>
+                                            Po kliknięciu w dowolny punkt zbioru Mandelbrota pobierana
+                                            jest liczba zespolona c odpowiadająca temu punktowi i generowany jest
+                                            odpowiadający tej liczbie zbiór Julii.
+                                        </div></div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- str7 slide2-->
+            </div><!--Strona 7-->  
+            <div class="section" id="str8">
+			
+                <div class="slide">
+                    <div class="container"> 
+                        <br/>
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#8strona/1'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div>
+
+                            <div class="panel-body">
+                                <p>Wymiar figury często kojarzymy z ilością współrzędnych za pomocą
+                                    których możemy opisać każdy punkt tej figury. Tak więc punkty
+                                    odcinka zapisujemy za pomocą jednej współrzędnej, kwadratu czy koła za
+                                    pomocą dwóch współrzędnych, sześcianu za pomocą trzech współrzędnych.
+                                    Takie pojęcie jest bardzo intuicyjne i często wystarczające. Jednak
+                                    według tej definicji zbiór Cantora będzie miał taki sam
+                                    wymiar jak odcinek czyli 1 trójkąt Sierpińskiego taki sam jak trójkąt czyli 2 itd.
+                                    Intuicja podpowiada, że fraktale dzięki swojej konstrukcji w mniejszym
+                                    stopniu "wypełniają" przestrzeń w stosunku do klasycznych figur więc pod
+                                    tym względem ich wymiar powinien być mniejszy.</p>
+
+                                <p>Pojęciem wymiaru zajmowało się wielu słynnych matematyków np. Felix
+                                    Hausdorff, czy Andriej Kołmogorow. Ten ostatni matematyk wprowadził pojęcie
+                                    tzw. wymiaru pudełkowego. </p>
+
+                                <p>Definicja wymiaru pudełkowego wymaga wprowadzenia pojęcia kostki n-wymiarowej ; w
+                                    przypadku wymiaru 1 taką kostką jest po prostu odcinek, w przypadku wymiaru 2
+                                    kwadrat, wymiaru 3 sześcian. Jeśli liczba N oznacza najmniejszą liczbę
+                                    kostek o boku ε potrzebną do pokrycia całego zbioru to liczba
+                                    d=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <munder>
+                                    <mo>lim</mo>
+                                    <mrow>
+                                    <mi>ε</mi>
+                                    <mo>→</mo>
+                                    <mo>∞</mo>
+                                    </mrow>
+                                    </munder>
+                                    <mfrac>
+                                    <mrow>
+                                    <mi>log</mi>
+                                    <mi>N</mi>
+                                    </mrow>
+                                    <mrow>
+                                    <mi>log</mi>
+                                    <mfrac>
+                                    <mn>1</mn>
+                                    <mi>ε</mi>
+                                    </mfrac>
+                                    </mrow>
+                                    </mfrac>
+                                    </math> o ile istnieje nazywa się wymiarem pudełkowym zbioru. Pokażę kilka
+                                    przykładów obliczania wymiaru pudełkowego różnych klasycznych zbiorów
+                                    używając definicji w wersji "ciągów".
+                                    Do obliczenia wymiaru wykorzystuje się podstawowe własności logarytmów.</p>
+
+
+
+
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+
+                    <div class="container">
+                        <br />
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#8strona'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                                <div onclick="window.location.href = 'index.html#8strona/2'" class="btn btn-success strP btn-arrow-right">dalej</div>
+                            </div> 
+                            <div class="panel-body">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="well"><p>Przykład 1. Dany jest odcinek o długości 1. </p>
+
+                                            <table>
+                                                <caption></caption>
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <tbody>
+                                                    <tr>
+                                                        <td>krok konstrukcji</td>
+                                                        <td>długość boku kostki</td>
+                                                        <td>ilość kostek</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>2</mn>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>3</mn>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>n</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mi>n</mi>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td>n</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p></p>
+                                            Zatem d=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <munder>
+                                            <mo>lim</mo>
+                                            <mrow>
+                                            <mi>n</mi>
+                                            <mo>→</mo>
+                                            <mo>∞</mo>
+                                            </mrow>
+                                            </munder>
+                                            </math> <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <mo>(</mo>
+                                            <mi>n</mi>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mfrac>
+                                            <mn>1</mn>
+                                            <mfrac>
+                                            <mn>1</mn>
+                                            <mi>n</mi>
+                                            </mfrac>
+                                            </mfrac>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            </mrow>
+                                            </mfrac>
+                                            </math>= <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <munder>
+                                            <mo>lim</mo>
+                                            <mrow>
+                                            <mi>n</mi>
+                                            <mo>→</mo>
+                                            <mo>∞</mo>
+                                            </mrow>
+                                            </munder>
+                                            <mfrac>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <mo>(</mo>
+                                            <mi>n</mi>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <mo>(</mo>
+                                            <mi>n</mi>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            </mfrac>
+                                            </math>=1. Wynik zgodny z intuicją. </div></div>
+                                    <div class="col-md-6">
+                                        <div class="well">
+                                            <p>Przykład 2. Dany jest kwadrat o boku długości 1</p>
+
+                                            <p></p>
+
+                                            <table>
+                                                <caption></caption>
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <tbody>
+                                                    <tr>
+                                                        <td>krok konstrukcji</td>
+                                                        <td>długość boku kostki</td>
+                                                        <td>ilość kostek</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>1</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>2</mn>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td>4=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>2</mn>
+                                                            <mn>2</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>3</mn>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td>9=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>3</mn>
+                                                            <mn>2</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>n</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mi>n</mi>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mi>n</mi>
+                                                            <mn>2</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p></p>
+
+                                            <p></p>
+
+                                            <p>Zatem d=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <munder>
+                                                <mo>lim</mo>
+                                                <mrow>
+                                                <mi>n</mi>
+                                                <mo>→</mo>
+                                                <mo>∞</mo>
+                                                </mrow>
+                                                </munder>
+                                                </math> <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <mfrac>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <mo>(</mo>
+                                                <msup>
+                                                <mi>n</mi>
+                                                <mn>2</mn>
+                                                </msup>
+                                                <mo>)</mo>
+                                                </mrow>
+                                                <mrow xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <mi>log</mi>
+                                                <mrow>
+                                                <mo>(</mo>
+                                                <mfrac>
+                                                <mn>1</mn>
+                                                <mfrac>
+                                                <mn>1</mn>
+                                                <mi>n</mi>
+                                                </mfrac>
+                                                </mfrac>
+                                                <mo>)</mo>
+                                                </mrow>
+                                                </mrow>
+                                                </mfrac>
+                                                </math>= <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <munder>
+                                                <mo>lim</mo>
+                                                <mrow>
+                                                <mi>n</mi>
+                                                <mo>→</mo>
+                                                <mo>∞</mo>
+                                                </mrow>
+                                                </munder>
+                                                <mfrac>
+                                                <mrow>
+                                                <mn>2</mn>
+                                                <mi>log</mi>
+                                                <mo>(</mo>
+                                                <mi>n</mi>
+                                                <mo>)</mo>
+                                                </mrow>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <mo>(</mo>
+                                                <mi>n</mi>
+                                                <mo>)</mo>
+                                                </mrow>
+                                                </mfrac>
+                                                </math>=2. Dla kwadratu wymiar pudełkowy jest również zgodny z intuicją.
+                                            </p>
+
+                                            <p></p>
+                                        </div></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="well"><p>Przykład 3. Dla zbioru Cantora sytuacja wygląda trochę inaczej. Z
+                                                konstrukcji zbioru wynika poniższa tabelka</p>
+
+                                            <p></p>
+
+                                            <p></p>
+
+                                            <table>
+                                                <caption></caption>
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <tbody>
+                                                    <tr>
+                                                        <td>krok konstrukcji</td>
+                                                        <td>długość boku kostki</td>
+                                                        <td>ilość kostek</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>3</mn>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>9</mn>
+                                                            </mfrac>
+                                                            </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mrow>
+                                                            <mo>(</mo>
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>3</mn>
+                                                            </mfrac>
+                                                            <mo>)</mo>
+                                                            </mrow>
+                                                            <mn>2</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                        <td>4=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>2</mn>
+                                                            <mn>2</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>27</mn>
+                                                            </mfrac>
+                                                            </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mrow>
+                                                            <mo>(</mo>
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>3</mn>
+                                                            </mfrac>
+                                                            <mo>)</mo>
+                                                            </mrow>
+                                                            <mn>3</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                        <td>8=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>2</mn>
+                                                            <mn>3</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>n</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mrow>
+                                                            <mo>(</mo>
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>3</mn>
+                                                            </mfrac>
+                                                            <mo>)</mo>
+                                                            </mrow>
+                                                            <mi>n</mi>
+                                                            </msup>
+                                                            </math></td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>2</mn>
+                                                            <mi>n</mi>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p></p>
+
+                                            <p></p>
+
+                                            <p>Wymiar pudełkowy wynosi d=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <munder>
+                                                <mo>lim</mo>
+                                                <mrow>
+                                                <mi>n</mi>
+                                                <mo>→</mo>
+                                                <mo>∞</mo>
+                                                </mrow>
+                                                </munder>
+                                                <mfrac>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <msup>
+                                                <mn>2</mn>
+                                                <mi>n</mi>
+                                                </msup>
+                                                </mrow>
+                                                <msup>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <mn>3</mn>
+                                                </mrow>
+                                                <mi>n</mi>
+                                                </msup>
+                                                </mfrac>
+                                                </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <mfrac>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <mn>2</mn>
+                                                </mrow>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <mn>3</mn>
+                                                </mrow>
+                                                </mfrac>
+                                                </math>≈0,63 , zatem mniej niż wymiar odcinka. Obliczenie potwierdziło
+                                                intuicję. Zbiór Cantora zajmuje "mniej przestrzeni" niż odcinek. </p>
+                                        </div></div>
+                                    <div class="col-md-6">        
+                                        <div class="well">
+                                            <p>Przykład 4. W przypadku trójkąta Sierpińskiego kostką jest kwadrat.</p>
+
+                                            <table>
+                                                <caption></caption>
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <tbody>
+                                                    <tr>
+                                                        <td>krok konstrukcji</td>
+                                                        <td>długość boku kostki</td>
+                                                        <td>ilość kostek</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>2</mn>
+                                                            </mfrac>
+                                                            </math></td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>4</mn>
+                                                            </mfrac>
+                                                            </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mrow>
+                                                            <mo>(</mo>
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>2</mn>
+                                                            </mfrac>
+                                                            <mo>)</mo>
+                                                            </mrow>
+                                                            <mn>2</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                        <td>6=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>3</mn>
+                                                            <mn>2</mn>
+                                                            </msup>
+                                                            </math>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>8</mn>
+                                                            </mfrac>
+                                                            </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mrow>
+                                                            <mo>(</mo>
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>2</mn>
+                                                            </mfrac>
+                                                            <mo>)</mo>
+                                                            </mrow>
+                                                            <mn>3</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                        <td>27=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>3</mn>
+                                                            <mn>3</mn>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>n</td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mrow>
+                                                            <mo>(</mo>
+                                                            <mfrac>
+                                                            <mn>1</mn>
+                                                            <mn>2</mn>
+                                                            </mfrac>
+                                                            <mo>)</mo>
+                                                            </mrow>
+                                                            <mi>n</mi>
+                                                            </msup>
+                                                            </math></td>
+                                                        <td><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                            <msup>
+                                                            <mn>3</mn>
+                                                            <mi>n</mi>
+                                                            </msup>
+                                                            </math></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p></p>
+
+                                            <p>Wymiar trójkąta Sierpińskiego wynosi
+                                                d=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <munder>
+                                                <mo>lim</mo>
+                                                <mrow>
+                                                <mi>n</mi>
+                                                <mo>→</mo>
+                                                <mo>∞</mo>
+                                                </mrow>
+                                                </munder>
+                                                <mfrac>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <msup>
+                                                <mn>3</mn>
+                                                <mi>n</mi>
+                                                </msup>
+                                                </mrow>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <msup>
+                                                <mn>2</mn>
+                                                <mi>n</mi>
+                                                </msup>
+                                                </mrow>
+                                                </mfrac>
+                                                </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <mfrac xmlns="http://www.w3.org/1998/Math/MathML">
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <mn>3</mn>
+                                                </mrow>
+                                                <mrow>
+                                                <mi>log</mi>
+                                                <mn>2</mn>
+                                                </mrow>
+                                                </mfrac>
+                                                </math>≈1,58</p>
+                                        </div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="container">
+                        <br />
+                        <div class="panel panel-default">
+                            <div class="panel-footer">
+                                <div onclick="window.location.href = 'index.html#8strona/1'" class="btn btn-success strL btn-arrow-left">cofnij</div>
+                            </div> 
+                            <div class="panel-body">
+
+                                <p>Przykład 4. Ten przykład pokazuje, że na płaszczyźnie istnieją zbiory
+                                    o dowolnym wymiarze pudełkowym d∈&lt;0,2&gt;. Skonstruujemy dywan
+                                    Sierpińskiego w następujący sposób; z kwadratu o boku długości 1 wycinamy
+                                    przez środki przeciwległych boków prostokąty o boku długości p∈(0,1).<br/> 
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p>
+                                        Otrzymujemy
+                                        4=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                        <mn>4</mn>
+                                        <mn>1</mn>
+                                        </msup>
+                                        </math> kwadraty o boku
+                                        długość <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msub>
+                                        <mi>a</mi>
+                                        <mn>1</mn>
+                                        </msub>
+                                        </math>= <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <mrow>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        </mfrac>
+                                        </math>. Z każdym z czterech kwadratów robimy to samo. Otrzymujemy
+                                        16=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                        <mn>4</mn>
+                                        <mn>2</mn>
+                                        </msup>
+                                        </math> kwadratów o bokach długości </p>
+
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msub>
+                                        <mi>a</mi>
+                                        <mn>2</mn>
+                                        </msub>
+                                        </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <mn>1</mn>
+                                        <mn>2</mn>
+                                        </mfrac>
+                                        </math>(<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <mrow>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        </mfrac>
+                                        </math> - p<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <mrow>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        </mfrac>
+                                        </math>) = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <mrow>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        <mo>+</mo>
+                                        <msup>
+                                        <mi>p</mi>
+                                        <mn>2</mn>
+                                        </msup>
+                                        </mrow>
+                                        <mn>4</mn>
+                                        </mfrac>
+                                        </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <msup>
+                                        <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        </mrow>
+                                        <mo>)</mo>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        </msup>
+                                        <mn>4</mn>
+                                        </mfrac>
+                                        </math>.
+
+                                        <p>W następnym kroku powtarzamy procedurę i z każdym z 16 kwadratów robimy
+                                            to samo otrzymując 64= <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>4</mn>
+                                            <mn>3</mn>
+                                            </msup>
+                                            </math>kwadraty o boku długości:</p>
+
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msub>
+                                        <mi>a</mi>
+                                        <mn>3</mn>
+                                        </msub>
+                                        </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <mn>1</mn>
+                                        <mn>2</mn>
+                                        </mfrac>
+                                        <mrow>
+                                        <mo>(</mo>
+                                        <mfrac>
+                                        <msup>
+                                        <mrow>
+                                        <mo>(</mo>
+                                        <mrow>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        </mrow>
+                                        <mo>)</mo>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        </msup>
+                                        <mn>4</mn>
+                                        </mfrac>
+
+                                        </mrow>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        <mfrac>
+                                        <msup>
+                                        <mrow>
+                                        <mo>(</mo>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        <mo>)</mo>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        </msup>
+                                        <mn>4</mn>
+                                        </mfrac>
+                                        <mo>)</mo>
+                                        </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mfrac>
+                                        <msup>
+                                        <mrow>
+                                        <mo>(</mo>
+                                        <mn>1</mn>
+                                        <mo>−</mo>
+                                        <mi>p</mi>
+                                        <mo>)</mo>
+                                        </mrow>
+                                        <mn>3</mn>
+                                        </msup>
+                                        <mn>8</mn>
+                                        </mfrac>
+                                        </math>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <img alt="Dywan Sierpińskiego" id="img014" src="../img/dywanSierp.png"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <img alt="wykres" id="img015" src="../img/wykres.png"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>Kontynuując postępowanie w n-tym kroku dostalibyśmy
+                                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mn>4</mn>
+                                            <mi>n</mi>
+                                            </msup>
+                                            </math> kwadratów o bokach długości
+                                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msup>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mfrac>
+                                            <mrow>
+                                            <mn>1</mn>
+                                            <mo>−</mo>
+                                            <mi>p</mi>
+                                            </mrow>
+                                            <mn>2</mn>
+                                            </mfrac>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            <mi>n</mi>
+                                            </msup>
+                                            </math></p>									
+                                        <p>Wymiar pudełkowy wynosi zatem
+                                            d=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <msub>
+                                            <mo>lim</mo>
+                                            <mrow>
+                                            <mi>n</mi>
+                                            <mo>→</mo>
+                                            <mo>∞</mo>
+                                            </mrow>
+                                            </msub>
+                                            <mfrac>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <msup>
+                                            <mn>4</mn>
+                                            <mi>n</mi>
+                                            </msup>
+                                            </mrow>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <msup>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mfrac>
+                                            <mn>2</mn>
+                                            <mrow>
+                                            <mn>1</mn>
+                                            <mo>−</mo>
+                                            <mi>p</mi>
+                                            </mrow>
+                                            </mfrac>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            <mi>n</mi>
+                                            </msup>
+                                            </mrow>
+                                            </mfrac>
+                                            </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                            <mrow>
+                                            <mn>2</mn>
+                                            <mi>log</mi>
+                                            <mn>2</mn>
+                                            </mrow>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <mrow>
+                                            <mo>(</mo>
+                                            <mfrac>
+                                            <mn>2</mn>
+                                            <mrow>
+                                            <mn>1</mn>
+                                            <mo>−</mo>
+                                            <mi>p</mi>
+                                            </mrow>
+                                            </mfrac>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            </mrow>
+                                            </mfrac>
+                                            </math>=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                            <mrow>
+                                            <mn>2</mn>
+                                            <mi>log</mi>
+                                            <mn>2</mn>
+                                            </mrow>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <mn>2</mn>
+                                            <mo>−</mo>
+                                            <mi>log</mi>
+                                            <mo>(</mo>
+                                            <mn>1</mn>
+                                            <mo>−</mo>
+                                            <mi>p</mi>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            </mfrac>
+                                            </math></p>
+
+                                        <p>Wykres funkcji f(p)=<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                            <mrow>
+                                            <mn>2</mn>
+                                            <mi>log</mi>
+                                            <mn>2</mn>
+                                            </mrow>
+                                            <mrow>
+                                            <mi>log</mi>
+                                            <mn>2</mn>
+                                            <mo>−</mo>
+                                            <mi>log</mi>
+                                            <mo>(</mo>
+                                            <mn>1</mn>
+                                            <mo>−</mo>
+                                            <mi>p</mi>
+                                            <mo>)</mo>
+                                            </mrow>
+                                            </mfrac>
+                                            </math> wygląda tak</p>
+
+                                        <p>Z wykresu można wnioskować, że wymiar pudełkowy dywanu Sierpińskiego w
+                                            zależności od wyboru p może być dowolną liczbą z przedziału (0,2).</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Strona 8-->
+			
+            <div class="section" id="str9">
+                <div class="container">  
+                    <br />
+
+                    <br />
+                    <div class="col-md-6">
+                        <h3>Programy użyte do stworzenia strony</h3>
+                        <div class="row">
+                            <div class="col-md-6"><div class="well"><h4>Notepad++</h4></div></div>
+                            <div class="col-md-6"><div class="well"><h4>NetBeans</h4></div></div>
+                        </div><div class="row">
+                            <div class="col-md-6"><div class="well"><h4>JQuery</h4></div></div>
+                            <div class="col-md-6"><div class="well"><h4>BootStrap</h4></div></div>
+                        </div><div class="row">
+                            <div class="col-md-6"><div class="well"><h4>JQuery.fullPage</h4></div></div>                          
+                            <div class="col-md-6"><div class="well"><h4>Amaya</h4></div></div>
+                        </div><div class="row">
+                            <div class="col-md-6"><div class="well"><h4>Gimp</h4></div></div>
+                            <div class="col-md-6"><div class="well"><h4>LibreOffice</h4></div></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Biliografia</h3>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <a href="http://hubpages.com/technology/Java-Source-Code-Recursive-Snow-Flakes/">http://hubpages.com/technology/Java-Source-Code-Recursive-Snow-Flakes/</a><br />
+                                <a href="http://www.algorytm.org/">http://www.algorytm.org/</a><br />
+                                <a href="http://www.csharphelper.com/">http://www.csharphelper.com/</a><br />
+								<a href="http://smallenvelop.com/display-loading-icon-page-loads-completely/">http://smallenvelop.com/display-loading-icon-page-loads-completely/</a><br />
+                                <a href="http://www.w3schools.com/">http://www.w3schools.com/</a><br />
+                                <a href="http://www.albertostrumia.it/Fractals/fractalMaps/MappeMandJulia.html">http://www.albertostrumia.it/Fractals/fractalMaps/MappeMandJulia.html</a><br />
+                                <a href="http://www.butterflyeffect.ca/Close/Pages/JuliaSets.html">http://www.butterflyeffect.ca/Close/Pages/JuliaSets.html</a><br />
+                                <a href="http://aleph0.clarku.edu/~djoyce/julia/julia.html">http://aleph0.clarku.edu/~djoyce/julia/julia.html</a><br />
+                                <a href="https://github.com/shpoont/bootstrap-arrow-buttons/">https://github.com/shpoont/bootstrap-arrow-buttons/</a><br /> 
+								<a href="https://pl.wikipedia.org/wiki/Fraktal">https://pl.wikipedia.org/wiki/Fraktal/</a><br /> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Strona 9-->
+        </div>
+        
+	  <div class="modal fade" id="zdj001" onclick="fullPageAllowScroll();" role="dialog">
+            <img src="../img/001.PNG" alt=""/>
+        </div>
+        <div class="modal fade" id="zdj002" onclick="fullPageAllowScroll();" role="dialog">
+            <img src="../img/002.PNG" alt=""/>
+        </div>
+        <div class="modal fade" id="zdj003" onclick="fullPageAllowScroll();" role="dialog">
+            <img src="../img/poradnik.gif" alt="poradnik"/><br/>
+        </div>         
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML.js" type="text/javascript" ></script>
+        <script src="../js/odwzorowanie.js" type="text/javascript"></script>
+        <script src="../js/podstawowe.js" type="text/javascript"></script>
+        <script src="../js/Generator.js" type="text/javascript"></script>
+        <script src="../js/ustawienia.js" type="text/javascript"></script>
+    </body>
+</html>
